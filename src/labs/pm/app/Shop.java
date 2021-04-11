@@ -2,9 +2,7 @@ package labs.pm.app;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
-import java.util.Comparator;
 
-import labs.pm.data.Product;
 import labs.pm.data.ProductManager;
 import labs.pm.data.Rating;
 
@@ -14,17 +12,18 @@ public class Shop {
 
 		ProductManager pm = new ProductManager("en-GB");
 
-		pm.createProduct(101, "Tea", BigDecimal.valueOf(1.99), Rating.NOT_RATED);
+		//pm.createProduct(101, "Tea", BigDecimal.valueOf(1.99), Rating.NOT_RATED);
+		pm.parseProduct("D,101,Tea,1.99,0,2019-09-19");
+		pm.printProductReport(101);
+		pm.parseReview("101,4,Nice hot cup of Tea");
+//		pm.reviewProduct(101, Rating.FOUR_STARS, "Nice hot cup of tea");
+//		pm.reviewProduct(101, Rating.TWO_STARS, "Rather weak tea");
+//		pm.reviewProduct(101, Rating.FOUR_STARS, "Fine tea");
+//		pm.reviewProduct(101, Rating.FOUR_STARS, "Good tea");
+//		pm.reviewProduct(101, Rating.FIVE_STARS, "Perfect tea");
+//		pm.reviewProduct(101, Rating.THREE_STARS, "Just add some lemon");
 		
-		//pm.printProductReport(101);
-		pm.reviewProduct(101, Rating.FOUR_STARS, "Nice hot cup of tea");
-		pm.reviewProduct(101, Rating.TWO_STARS, "Rather weak tea");
-		pm.reviewProduct(101, Rating.FOUR_STARS, "Fine tea");
-		pm.reviewProduct(101, Rating.FOUR_STARS, "Good tea");
-		pm.reviewProduct(101, Rating.FIVE_STARS, "Perfect tea");
-		pm.reviewProduct(101, Rating.THREE_STARS, "Just add some lemon");
-		
-		//pm.printProductReport(101);
+		pm.printProductReport(101);
 		
 		pm.createProduct(102, "Hamburger", BigDecimal.valueOf(1.99), Rating.NOT_RATED, LocalDate.now());
 		
